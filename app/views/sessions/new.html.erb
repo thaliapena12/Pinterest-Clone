@@ -1,5 +1,6 @@
 <h2>Sign In</h2>
 
+
 <form action="<%= session_url %>" method="post">
   <%= auth_token_input %>
 
@@ -15,3 +16,5 @@
 
   <input type="submit" value="Sign In">
 </form>
+
+<a class='button' href=<%= new_user_url %> >Sign-up!</a>
