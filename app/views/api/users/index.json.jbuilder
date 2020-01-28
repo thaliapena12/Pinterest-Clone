@@ -8,6 +8,6 @@
 
 @users.each do |user|
   json.set! user.id do
-    json.extract! user, :id, :username, user: user
+   json.partial! "api/users/user", user: user
   end
 end
