@@ -20,7 +20,7 @@
 
 #   <input type="submit" value="Submit">
 # </form>
-json.extract! user, :id, :username, user: @user
+json.partial! "api/users/user", user: @user
 
 
 

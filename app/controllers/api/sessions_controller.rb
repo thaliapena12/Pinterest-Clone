@@ -9,7 +9,7 @@ class Api::SessionsController < ApplicationController
       params[:user][:password]
     )
     if user
-      sign_in(user)
+      sign_in(@user)
       render "api/users/show"
       # flash[:success] = "Logged in"
     
@@ -21,7 +21,7 @@ class Api::SessionsController < ApplicationController
   def destroy
     @user = current_user
     if @user
-      sign_out!
+      sign_out
       render "api/users/show"
     else
       render json: ["User is not currently signed in."], status: 404 #not found
