@@ -14,7 +14,7 @@ class Api::SessionsController < ApplicationController
       # flash[:success] = "Logged in"
     
     else
-      render json: ["Wrong Username and/or Password"], status: 401
+      render json: ["Wrong Username and/or Password"], status: 401 #unauthorized
     end
   end
 
@@ -24,7 +24,7 @@ class Api::SessionsController < ApplicationController
       sign_out!
       render "api/users/show"
     else
-      render json: ["User is not currently signed in."], status: 404
+      render json: ["User is not currently signed in."], status: 404 #not found
     end
   end
 
